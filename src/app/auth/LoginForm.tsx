@@ -15,6 +15,7 @@ export default function LoginForm() {
     e.preventDefault();
     try {
       const { data } = await api.post('/auth/login', { email, password });
+      console.log(data);
       setAuthToken(data.access_token);
       router.push("/dashboard");
     } catch (error) {
